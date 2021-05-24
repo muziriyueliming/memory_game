@@ -1,8 +1,5 @@
 import sys
 import pygame
-# from settings import Settings 
-# from pictrue import Pictrue
-# from bullet import Bullet
 
 class MemoryGame:
     """管理游戏资源和行为的类"""
@@ -13,13 +10,14 @@ class MemoryGame:
         #制定大小模式
         self.screen = pygame.display.set_mode((800, 600))
         pygame.display.set_caption("Memory Game - 记忆力训练游戏。")
+        self.bg_color = (0, 200, 50)
        
     def run_game(self):
         while True:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     sys.exit()
-        
+            self.screen.fill(self.bg_color)
             pygame.display.flip()
 
 if __name__ == '__main__':
